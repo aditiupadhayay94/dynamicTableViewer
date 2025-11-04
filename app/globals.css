@@ -1,42 +1,95 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #1976d2;
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --text: #222;
+  --subtext: #6b7280;
+  --border: #e0e0e0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+html, body {
   margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Main container */
+main {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Paper/card style */
+.MuiPaper-root {
+  border-radius: 16px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
+  background-color: var(--card-bg) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.MuiPaper-root:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Table header */
+.MuiTableHead-root {
+  background-color: #f8f9fb !important;
+}
+
+.MuiTableCell-head {
+  font-weight: 600 !important;
+  font-size: 15px;
+  color: var(--text) !important;
+  text-transform: capitalize;
+}
+
+/* Table body hover */
+.MuiTableRow-hover:hover {
+  background-color: #f5f7fa !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Search bar */
+.MuiOutlinedInput-root {
+  background-color: #fafafa !important;
+  border-radius: 10px !important;
+}
+
+.MuiOutlinedInput-input {
+  padding: 10px 12px !important;
+}
+
+/* Pagination */
+.MuiTablePagination-root {
+  border-top: 1px solid var(--border);
+}
+
+
+.MuiTypography-h5 {
+  font-weight: 600 !important;
+  color: var(--text);
+}
+
+/* Divider */
+.MuiDivider-root {
+  margin: 12px 0 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  .MuiTypography-h5 {
+    font-size: 1.1rem !important;
   }
 }
