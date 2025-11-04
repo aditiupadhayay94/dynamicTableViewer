@@ -1,10 +1,18 @@
-import { PersistConfig } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+
+import { PersistConfig } from "redux-persist";
+
+// Only import storage in the browser
+let storage: any = undefined;
+
+if (typeof window !== "undefined") {
+  
+  storage = require("redux-persist/lib/storage").default;
+}
 
 const persistConfig: PersistConfig<any> = {
-  key: 'table',
+  key: "table",
   storage,
-  whitelist: ['columns'],
+  whitelist: ["columns"],
 };
 
 export default persistConfig;
